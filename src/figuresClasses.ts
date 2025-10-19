@@ -1,25 +1,35 @@
 /* eslint-disable prettier/prettier */
-enum Shape {
-  Triangle = 'triangle',
-  Circle = 'circle',
-  Rectangle = 'rectangle',
-}
+// enum Shape {
+//   Triangle = 'triangle',
+//   Circle = 'circle',
+//   Rectangle = 'rectangle',
+// }
 
-enum Color {
-  Red = 'red',
-  Green = 'green',
-  Blue = 'blue',
-}
+// enum Color {
+//   Red = 'red',
+//   Green = 'green',
+//   Blue = 'blue',
+// }
+// type Shape = 'triangle' | 'circle' | 'rectangle';
+
+// type Color = 'red' | 'green' | 'blue';
+
+// export interface Figure {
+//   shape: Shape;
+//   color: Color;
+//   getArea(): number;
+// }
 
 export interface Figure {
-  shape: Shape;
-  color: Color;
+  shape: 'triangle' | 'circle' | 'rectangle';
+  color: 'red' | 'green' | 'blue';
   getArea(): number;
 }
-export class Triangle implements Figure {
-  color: Color;
 
-  shape = Shape.Triangle;
+export class Triangle implements Figure {
+  color: 'red' | 'green' | 'blue';
+
+  shape = 'triangle';
 
   a: number;
 
@@ -27,7 +37,12 @@ export class Triangle implements Figure {
 
   c: number;
 
-  constructor(color: Color, a: number, b: number, c: number) {
+  constructor(
+    color: 'red' | 'green' | 'blue',
+    a: number,
+    b: number,
+    c: number,
+  ) {
     this.color = color;
     this.a = a;
     this.b = b;
@@ -61,13 +76,13 @@ export class Triangle implements Figure {
 }
 
 export class Circle implements Figure {
-  color: Color;
+  color: 'red' | 'green' | 'blue';
 
-  shape = Shape.Circle;
+  shape = 'circle';
 
   radius: number;
 
-  constructor(color: Color, radius: number) {
+  constructor(color: 'red' | 'green' | 'blue', radius: number) {
     this.color = color;
     this.radius = radius;
 
@@ -84,15 +99,15 @@ export class Circle implements Figure {
 }
 
 export class Rectangle implements Figure {
-  color: Color;
+  color: 'red' | 'green' | 'blue';
 
-  shape = Shape.Rectangle;
+  shape = 'rectangle';
 
   height: number;
 
   width: number;
 
-  constructor(color: Color, width: number, height: number) {
+  constructor(color: 'red' | 'green' | 'blue', width: number, height: number) {
     this.color = color;
     this.width = width;
     this.height = height;
