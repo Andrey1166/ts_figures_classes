@@ -1,10 +1,4 @@
 /* eslint-disable prettier/prettier */
-export interface Figure {
-  shape: string;
-  color: string;
-  getArea(): number;
-}
-
 enum Shape {
   Triangle = 'triangle',
   Circle = 'circle',
@@ -17,6 +11,11 @@ enum Color {
   Blue = 'blue',
 }
 
+export interface Figure {
+  shape: Shape;
+  color: Color;
+  getArea(): number;
+}
 export class Triangle implements Figure {
   color: Color;
 
